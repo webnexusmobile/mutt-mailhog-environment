@@ -1,0 +1,17 @@
+version: '3'
+services:
+  mailhog:
+    build: .
+    ports:
+    - "1025:1025"
+    - "8025:8025"
+  mutt:
+    build: 
+      context: .
+      dockerfile: mutt.Dockerfile
+    volumes:
+      - ./mails:/home/mutt/mails
+    depends_on: 
+      - "mailhog"
+    links: 
+      - "mailhog"

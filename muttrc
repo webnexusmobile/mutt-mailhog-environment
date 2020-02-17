@@ -1,0 +1,10 @@
+#######################
+# sending with mailhog
+#######################
+
+set smtp_url=smtp://mailhog:1025
+set ssl_force_tls = no
+set use_from=yes
+set realname="Example Sender"
+set from=sender@example.com
+set envelope_from=yes
